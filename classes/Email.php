@@ -3,6 +3,9 @@
 namespace Classes;
 
 use PHPMailer\PHPMailer\PHPMailer;
+use Dotenv\Dotenv as Dotenv;
+$dotenv = Dotenv::createImmutable('../includes/.env');
+$dotenv->safeLoad();
 
 class Email
 {
@@ -24,13 +27,12 @@ class Email
 
         //Crear el objeto de email
         $mail = new PHPMailer();
-
         $mail->isSMTP();
-        $mail->Host = 'smtp-relay.sendinblue.com';
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Port = 587;
-        $mail->Username = 'christianblades2332@gmail.com';
-        $mail->Password = 'Christian.03232817';
+        $mail->Port = $_ENV['EMAIL_PORT'];
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
 
         $mail->setFrom('cuentas@appsalon.com');
         $mail->addAddress($this->email);
@@ -102,7 +104,7 @@ class Email
 
                 <p>Para que puedas comenzar a disfrutar los servicios ofrecidos en App Salon, debes confirma tu correo electrónico presionando el siguiente enlace:</p>
 
-                <a href='http://reservacioncitas.alwaysdata.net/confirmarCuenta?token=" . $this->token . "'><button>Confirmar Cuenta</button></a>
+                <a href='" . $_ENV['SERVER_HOST'] . "/confirmarCuenta?token=" . $this->token . "'><button>Confirmar Cuenta</button></a>
 
                 <p>Si tu no solicitaste el registro en Appsalon, puedes ignorar este mensaje.</p>
 
@@ -126,14 +128,14 @@ class Email
         // create a new object
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp.mailtrap.io';
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Port = 2525;
-        $mail->Username = '769efd527d709f';
-        $mail->Password = 'c45a14afcf7a7e';
+        $mail->Port = $_ENV['EMAIL_PORT'];
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
 
         $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
+        $mail->addAddress($this->email);
         $mail->Subject = 'Reestablece tu password';
 
         // Set HTML
@@ -205,7 +207,7 @@ class Email
 
                 <p>Para restablecer tu contraseña y que puedas volver a disfrutar los servicios ofrecidos en App Salon, debes presionar el siguiente enlace:</p>
 
-                <a href='http://reservacioncitas.alwaysdata.net/recuperarPassword?token=" . $this->token . "'><button>Recuperar Contraseña</button></a>
+                <a href='" . $_ENV['SERVER_HOST'] . "/recuperarPassword?token=" . $this->token . "'><button>Recuperar Contraseña</button></a>
 
                 <p>Si tu no solicitaste el cambio de contraseña de tu cuenta en Appsalon, puedes ignorar este mensaje.</p>
 

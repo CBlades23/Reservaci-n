@@ -2,6 +2,6 @@
 
 <?php include_once __DIR__ . '/../templates/alertas.php'; ?>
 
-<div class="acciones boton">
+<div class="acciones-boton boton">
     <a href="/">Iniciar Sesión</a>
 </div>
