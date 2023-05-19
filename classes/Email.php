@@ -26,14 +26,14 @@ class Email
         $mail = new PHPMailer();
 
         $mail->isSMTP();
-        $mail->Host = 'sandbox.smtp.mailtrap.io';
+        $mail->Host = 'smtp-relay.sendinblue.com';
         $mail->SMTPAuth = true;
-        $mail->Port = 2525;
-        $mail->Username = '769efd527d709f';
-        $mail->Password = 'c45a14afcf7a7e';
+        $mail->Port = 587;
+        $mail->Username = 'christianblades2332@gmail.com';
+        $mail->Password = 'Christian.03232817';
 
         $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress($this->email, 'AppSalon.com');
+        $mail->addAddress($this->email);
         $mail->Subject = 'Confirma tu cuenta';
 
         //Set HTML
@@ -102,7 +102,7 @@ class Email
 
                 <p>Para que puedas comenzar a disfrutar los servicios ofrecidos en App Salon, debes confirma tu correo electrónico presionando el siguiente enlace:</p>
 
-                <a href='http://localhost:3000/confirmarCuenta?token=" . $this->token . "'><button>Confirmar Cuenta</button></a>
+                <a href='http://reservacioncitas.alwaysdata.net/confirmarCuenta?token=" . $this->token . "'><button>Confirmar Cuenta</button></a>
 
                 <p>Si tu no solicitaste el registro en Appsalon, puedes ignorar este mensaje.</p>
 
@@ -205,7 +205,7 @@ class Email
 
                 <p>Para restablecer tu contraseña y que puedas volver a disfrutar los servicios ofrecidos en App Salon, debes presionar el siguiente enlace:</p>
 
-                <a href='http://localhost:3000/recuperarPassword?token=" . $this->token . "'><button>Recuperar Contraseña</button></a>
+                <a href='http://reservacioncitas.alwaysdata.net/recuperarPassword?token=" . $this->token . "'><button>Recuperar Contraseña</button></a>
 
                 <p>Si tu no solicitaste el cambio de contraseña de tu cuenta en Appsalon, puedes ignorar este mensaje.</p>
 
