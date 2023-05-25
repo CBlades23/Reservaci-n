@@ -1,0 +1,23 @@
+{
+    "name": "christian/app-salon",
+    "description": "Proyecto de sistema de citas, MVC, SQL, SASS, Gulp, JS, CSS",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers",
+            "Model\\" : "./models",
+            "Classes\\" : "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "CBlades23",
+            "email": "christianblades2332@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
