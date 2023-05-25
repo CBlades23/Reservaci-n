@@ -1,4 +1,0 @@
-LANG=en_US.UTF-8
-LC_ALL=en_US.UTF-8
-PATH=/home/reservacioncitas/.local/bin:/home/reservacioncitas/.local/share/gem/ruby/3.1.0/bin:/home/reservacioncitas/.gem/ruby/3.1.0/bin:/home/reservacioncitas/.composer/vendor/bin:/home/reservacioncitas/.npm-packages/bin:/usr/local/bin:/usr/bin:/bin
-TMPDIR=/home/reservacioncitas/admin/tmp
